@@ -1,11 +1,11 @@
 {
-    'name': 'New App',
-    'summary': 'Small description of your module.',
+    'name': 'Motorcycle Financing',
+    'summary': 'Streamlines the loan application process for dealerships.',
     'license': 'OPL-1',
-    'category': 'Category/Subcategory',
-    'author': '',  # Use your GitHub Username
-    'website': '',  # Link to your Repo
-    'version': '1.0.0',
+    'category': 'Kawiil/Custom Modules',
+    'author': 'LakConrad',  # Use your GitHub Username
+    'website': 'https:/LakConrad@github.com',  # Link to your Repo
+    'version': '0.0.1',
     'depends': ['base'],  # At minimum depend on 'base'
     'data': [
 
