@@ -8,7 +8,7 @@
     'version': '0.0.1',
     'depends': ['base'],  # At minimum depend on 'base'
     'data': [
-
+ 'data/loan_demo.xml',
     ],
     'demo': [
         'data/loan_demo.xml',
