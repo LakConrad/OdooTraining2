@@ -11,7 +11,7 @@
 
     ],
     'demo': [
-
+        'data/loan_demo.xml',
     ],
     'application': True,
 }
