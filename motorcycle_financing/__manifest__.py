@@ -8,7 +8,8 @@
     'version': '0.0.1',
     'depends': ['base'],  # At minimum depend on 'base'
     'data': [
- 'data/loan_demo.xml',
+        'views/loan_application_views.xml',
+        'views/motorcycle_financing_menuitems.xml',
     ],
     'demo': [
         'data/loan_demo.xml',
