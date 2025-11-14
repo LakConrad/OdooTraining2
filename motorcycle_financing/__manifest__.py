@@ -9,7 +9,7 @@
     'depends': ['base'],  # At minimum depend on 'base'
     'data': [
         'security/res_groups.xml',
-        'security/ir.model.access.csv',
+        #'security/ir.model.access.csv',
         'security/rules.xml',
         'views/loan_application_views.xml',
         'views/motorcycle_financing_menuitems.xml',
