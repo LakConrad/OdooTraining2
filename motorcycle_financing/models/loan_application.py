@@ -26,3 +26,8 @@ class LoanApplication(models.Model):
         ('cancel', 'Canceled')],
         required=True, default="draft")
     notes = fields.Html()
+
+    # Relational Fields
+    partner_id = fields.Many2one(comodel_name='res.partner', string="Customer")
+    user_id = fields.Many2one(comodel_name='res.users', string="Salesperson")
+    product_id = fields.Many2one(comodel_name='product.product', string="Product")
