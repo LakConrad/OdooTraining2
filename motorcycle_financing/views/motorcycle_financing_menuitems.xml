@@ -3,5 +3,10 @@
         <menuitem id="motorcycle_financing_app_menu"  name="Motorcycle Financing">
             <menuitem id="motorcycle_financing_loan" name="Loan Applications" action="loan_application_action"/>
         </menuitem>
+        <menuitem id="motorcycle_financing_settings_menu"  name="Settings" groups="group_app_admin">
+            <menuitem id="motorcycle_loan_tag" name="Loan Tags" action="loan_application_tag_action"/>
+            <menuitem id="motorcycle_loan_document_type" name="Document Types" action="loan_application_document_type_action"/>
+        </menuitem>
+        
     </menuitem>
 </odoo>
