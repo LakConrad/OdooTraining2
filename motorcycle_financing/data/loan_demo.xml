@@ -29,10 +29,9 @@
         </record>
 
         <!-- Motorcycle Gear & Parts -->
-        <!--
         <record id="product_helmet" model="product.product">
             <field name="name">Full-Face Helmet</field>
-            <field name="categ_id" ref="product.product_category_2"/>
+            <!--<field name="categ_id" ref="product.product_category_2"/>-->
             <field name="type">consu</field>
             <field name="list_price">200</field>
             <field name="standard_price">150</field>
@@ -40,7 +39,7 @@
         
         <record id="product_gloves" model="product.product">
             <field name="name">Riding Gloves</field>
-            <field name="categ_id" ref="product.product_category_2"/>
+            <!--<field name="categ_id" ref="product.product_category_2"/>-->
             <field name="type">consu</field>
             <field name="list_price">50</field>
             <field name="standard_price">30</field>
@@ -48,11 +47,11 @@
         
         <record id="product_exhaust" model="product.product">
             <field name="name">Performance Exhaust System</field>
-            <field name="categ_id" ref="product.product_category_3"/>
+            <!--<field name="categ_id" ref="product.product_category_3"/>-->
             <field name="type">consu</field>
             <field name="list_price">600</field>
             <field name="standard_price">400</field>
-        </record>-->
+        </record>
 
         <!-- Customers -->
         <record id="res_partner_customer1" model="res.partner">
@@ -112,8 +111,10 @@
         <record id="document_type_proof_residency" model="loan.application.document.type">
             <field name="name">Proof of Residency</field>
         </record>
+
+
+        
         <!-- Loan Application Records --> 
-        <!--
         <record id="loan_01" model="loan.application">
             <field name="name">One</field>
             <field name="tag_ids" eval="[Command.link(ref('tag_first_time_buyer')),Command.link(ref('tag_new_motorcycle_purchase')),Command.link(ref('tag_high_priority'))]"/>
@@ -125,34 +126,37 @@
             <field name="loan_term">32</field>
             <field name="state">draft</field>
         </record>		
+
+        
         <record id="loan_02" model="loan.application">
             <field name="name">Two</field>
-            <field name="tag_ids" eval="[Command.link(ref('tag_corporate_client')),Command.link(ref('tag_new_motorcycle_purchase'))]"/>
+            <field name="tag_ids" eval="[Command.link(ref('tag_returning_customer')),Command.link(ref('tag_preowned_motorcycle_purchase')),Command.link(ref('tag_standard_priority'))]"/>
             <field name="partner_id" ref="res_partner_customer2"/>
             <field name="product_id" ref="product_kawiil_raijin"/>
-            <field name="user_id" ref="base.user_demo"/>
+            <field name="user_id" ref="base.user_admin"/>
             <field name="interest_rate">.09</field>
-            <field name="date_application" eval="(DateTime.today() - relativedelta(months=5)).strftime('%Y-%m-%d')"/>
+            <field name="date_application">2023-01-27</field>
             <field name="loan_term">24</field>
             <field name="state">signed</field>
         </record>
         <record id="loan_03" model="loan.application">
             <field name="name">Three</field>
-            <field name="tag_ids" eval="[Command.link(ref('tag_low_priority')),Command.link(ref('tag_returning_customer'))]"/>
+            <field name="tag_ids" eval="[Command.link(ref('tag_corporate_client')),Command.link(ref('tag_accessories_financing')),Command.link(ref('tag_low_priority'))]"/>
             <field name="partner_id" ref="res_partner_customer3"/>
             <field name="product_id" ref="product_kawiil_indra"/>
-            <field name="user_id" ref="base.user_demo"/>
+            <field name="user_id" ref="base.user_admin"/>
             <field name="interest_rate">.0548</field>
-            <field name="date_application" eval="(DateTime.today() - relativedelta(months=2)).strftime('%Y-%m-%d')"/>
+            <field name="date_application">2023-01-27</field>
             <field name="loan_term">64</field>
             <field name="state">approved</field>
         </record>
-        -->
 
-        <!--
-        <record id="base.user_demo" model="res.users">
-            <field name="groups_id" eval= "[Command.link(ref('group_app_user'))]"/>
+  <!--     
+
+        <record id="base.user_admin" model="res.users">
+            <field name="group_ids" eval= "[Command.link(ref('group_app_user'))]"/>
         </record>
-        -->
+-->
+        
     </data>
 </odoo>

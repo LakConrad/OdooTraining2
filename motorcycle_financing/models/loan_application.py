@@ -31,3 +31,5 @@ class LoanApplication(models.Model):
     partner_id = fields.Many2one(comodel_name='res.partner', string="Customer")
     user_id = fields.Many2one(comodel_name='res.users', string="Salesperson")
     product_id = fields.Many2one(comodel_name='product.product', string="Product")
+    tag_ids = fields.Many2many(comodel_name='loan.application.tag')
+    document_ids = fields.One2many(comodel_name='loan.application.document', inverse_name='application_id')
