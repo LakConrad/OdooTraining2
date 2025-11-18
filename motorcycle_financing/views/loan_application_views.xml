@@ -1,0 +1,96 @@
+<odoo>
+    <record id="loan_application_action" model="ir.actions.act_window">
+        <field name="name">Loan Applications</field>
+        <field name="res_model">loan.application</field>
+        <field name="view_mode">list,form,kanban</field>
+        <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Add a new record
+              </p><p>
+                Customer's loan applications.
+              </p>
+        </field>
+    </record>
+    
+    <record id="loan_application_form_view" model="ir.ui.view">
+        <field name="name">loan.application.form.view</field>
+        <field name="model">loan.application</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <h1><field name="name" widget="text" options="{'line_breaks': False}"/></h1>
+                    <group>
+                        <group>
+                            <separator string="Customer Info"/>
+                                <field name="partner_id"/>
+                                <field name="product_id"/>
+                                <field name="user_id"/>
+
+                        </group>
+                        <group>
+                            <separator string="Loan Info"/>
+                            <field name="down_payment" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            <field name="loan_amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            <field name="currency_id" readonly="True"/>
+                            <field name="interest_rate" widget="percentage"/>
+                            <field name="loan_term"/>
+                        
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="Notes">
+                            <field name="notes" placeholder="Write your notes here"/>
+                        </page>
+                        <page name="Rejection Details">
+                            <field name="rejection_reason" placeholder="Write your notes here"/>
+                        </page>
+                        <page name="Date Log">
+                            <group>
+                                <field name="date_application"/>
+                                <field name="date_approval"/>
+                                <field name="date_rejection"/>
+                                <field name="date_signed"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record id="loan_application_list_view" model="ir.ui.view">
+        <field name="name">loan.application.list.view</field>
+        <field name="model">loan.application</field>
+        <field name="arch" type="xml">
+            <list multi_edit="1">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="loan_amount"/>
+                <field name="down_payment"/>
+                <field name="interest_rate"/>
+                <field name="loan_term"/>
+                <field name="date_application"/>
+                <field name="date_approval" optional="hide"/>
+                <field name="date_rejection" optional="hide"/>
+                <field name="date_signed" optional="hide"/>
+            </list>
+        </field>
+    </record>
+    
+    <record id="loan_application_search_view" model="ir.ui.view">
+        <field name="name">loan.application.search.view</field>
+        <field name="model">loan.application</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="partner_id"/>
+                <filter name="filter_state_draft" string="Draft" domain="[('state','=','draft')]"/>
+                <filter name="filter_state_approved" string="Offer Approved" domain="[('state','=','approved')]"/>
+                <filter name="filter_date_application" date="date_application" string="Application Date"/>
+                <filter name="groupby_date_application" string="Application Date" context="{'group_by': 'date_application'}"/> 
+                <filter name="groupby_state" string="State" context="{'group_by': 'state'}"/>
+            </search>
+        </field>
+    </record>
+    
+</odoo>
