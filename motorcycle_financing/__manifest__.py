@@ -8,6 +8,9 @@
     'version': '0.0.1',
     'depends': ['base','product'],  # At minimum depend on 'base'
     'data': [
+
+                'data/loan_demo.xml',
+        
         'security/res_groups.xml',
         'security/ir.model.access.csv',
         'security/rules.xml',
@@ -15,7 +18,7 @@
         'views/motorcycle_financing_menuitems.xml',
     ],
     'demo': [
-        'data/loan_demo.xml',
+
     ],
     'application': True,
 }
