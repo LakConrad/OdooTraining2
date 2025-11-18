@@ -156,6 +156,7 @@
         <record id="base.user_admin" model="res.users">
             <field name="group_ids" eval= "[Command.link(ref('group_app_user'))]"/>
         </record>
+        
 -->
         
     </data>
